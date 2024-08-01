@@ -1,5 +1,7 @@
 export default interface MarkerType {
-  id: number
-  lat: number
-  lng: number
+    id: number,
+    location: { lat: number, lng: number },
+    timestamp: number,
+    next: null,
+
 }

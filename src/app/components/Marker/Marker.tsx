@@ -1,9 +1,5 @@
 import MarkerType from "@/app/interfaces/Marker"
-import {
-  AdvancedMarker,
-  Pin,
-  InfoWindow,
-} from "@vis.gl/react-google-maps"
+import { AdvancedMarker, Pin, InfoWindow } from "@vis.gl/react-google-maps"
 import { useSelector, useDispatch } from "react-redux"
 import { useState } from "react"
 import {
@@ -15,11 +11,9 @@ import "./marker.css"
 export default function Marker({
   marker,
   customRef,
-  position,
 }: {
   marker: MarkerType
   customRef: any
-  position: any
 }) {
   const markers: any[] = useSelector((state: any) => state.markers)
   const [infoWindow, setInfoWindow] = useState(false)
@@ -31,7 +25,7 @@ export default function Marker({
       <AdvancedMarker
         ref={customRef}
         draggable={true}
-        position={position}
+        position={marker.location}
         onClick={() => setInfoWindow(true)}
         onDragEnd={(e) => {
           const lat = e.latLng!.lat()
@@ -46,7 +40,7 @@ export default function Marker({
 
       {infoWindow && (
         <InfoWindow
-          position={position}
+          position={marker.location}
           onCloseClick={() => setInfoWindow(false)}
         >
           <button

@@ -7,7 +7,7 @@ import {
   MarkerClusterer,
 } from "@googlemaps/markerclusterer"
 
-// i dont have idea about how this clustering works, just copypasted at 4am, and take my apologise for this code
+// i dont have idea about how this clustering works, just copypasted at 4am, and im sorry for this code
 
 export default function MarkersGroup({
   pointsArray,
@@ -52,7 +52,6 @@ export default function MarkersGroup({
           marker={point}
           key={point.id}
           customRef={(marker: any) => setMarkerRef(marker, point.id)}
-          position={{ lat: point.lat, lng: point.lng }}
         />
       ))}
     </>

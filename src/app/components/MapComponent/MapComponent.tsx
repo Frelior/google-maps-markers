@@ -6,7 +6,10 @@ import {
   ControlPosition,
 } from "@vis.gl/react-google-maps"
 import { useSelector, useDispatch } from "react-redux"
-import { addMarker, clearMarkers } from "../../../store/slices/markersSlice"
+import {
+  addMarker,
+  clearMarkers,
+} from "../../../store/slices/markersSlice"
 import "./mapComponent.css"
 import State from "@/app/interfaces/State"
 import MarkersGroup from "../MarkersGroup/MarkersGroup"
@@ -17,6 +20,7 @@ export default function MapComponent() {
   const initialPosition = { lat: 49.99, lng: 36.24 }
   const markersState = useSelector((state: State) => state.markers)
   const dispatch = useDispatch()
+
 
 
   return (
