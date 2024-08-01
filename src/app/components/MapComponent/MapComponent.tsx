@@ -18,6 +18,7 @@ export default function MapComponent() {
   const markersState = useSelector((state: State) => state.markers)
   const dispatch = useDispatch()
 
+
   return (
     <APIProvider apiKey={API_KEY as string}>
       <Map
